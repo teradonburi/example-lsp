@@ -1,0 +1,13 @@
+.git
+.gitignore
+.vscode/
+node_modules/
+client/node_modules/
+server/node_modules/
+*.ts
+!*.d.ts
+tsconfig.json
+client/tsconfig.json
+server/tsconfig.json
+*.map
+.DS_Store

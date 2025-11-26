@@ -1,0 +1,12 @@
+# エラーが表示されるケース
+
+# nameフィールドが欠けている → エラー
+version: "1.0.0"
+
+# enabledがbooleanでない → 警告
+enabled: "yes"
+
+settings:
+  # timeoutが数値でない → 警告
+  timeout: "30秒"
+  retries: 3

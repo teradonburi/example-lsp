@@ -1,0 +1,43 @@
+{
+  "name": "myconfig-lsp",
+  "displayName": "My Config LSP",
+  "description": "LSP server for .myconfig files - YAML syntax validation with custom schema",
+  "version": "0.0.1",
+  "publisher": "teradonburi",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters"
+  ],
+  "activationEvents": [],
+  "main": "./client/out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "myconfig",
+        "aliases": [
+          "My Config",
+          "myconfig"
+        ],
+        "extensions": [
+          ".myconfig"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w",
+    "lint": "eslint ./client/src ./server/src --ext .ts,.tsx",
+    "postinstall": "cd client && npm install && cd ../server && npm install",
+    "test": "cd server && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  }
+}
