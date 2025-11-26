@@ -58,6 +58,31 @@ npm run compile
 npm run watch
 ```
 
+
+### コマンドラインから起動
+
+```bash
+# 依存関係のインストール
+npm install
+
+# ビルド
+npm run compile
+
+# 拡張機能の開発モードで起動
+code --extensionDevelopmentPath=. ./sample
+```
+
+確認ポイント
+
+| ファイル                    | 期待される結果      |
+|-------------------------|--------------|
+| sample/valid.myconfig   | エラーなし        |
+| sample/invalid.myconfig | 3件の警告/エラーを検出 |
+
+- name フィールドが欠けている → エラー
+- enabled: "yes" → boolean型ではない（警告）
+- timeout: "30秒" → 数値型ではない（警告）
+
 ## ディレクトリ構造
 
 ```
@@ -101,17 +126,17 @@ VSCode Extensionのエントリーポイント。LSPサーバーを起動し、�
 ## スクリーンショット
 正常系
 
-![スクリーンショット 2025-11-26 18.48.38.png](attachment:75c0cdbb-5fec-4a80-ae70-f5670834311f:スクリーンショット_2025-11-26_18.48.38.png)
+<img width="738" height="292" alt="スクリーンショット 2025-11-26 18 48 38" src="https://github.com/user-attachments/assets/3ca8a33a-b9f7-40d5-8319-5fa800c526cd" />
+
 
 異常系およびLSPプラグインでの文法チェック
 
-![スクリーンショット 2025-11-26 18.48.14.png](attachment:76529b62-4a20-4862-a2bb-a039bec85ac7:スクリーンショット_2025-11-26_18.48.14.png)
+<img width="807" height="379" alt="スクリーンショット 2025-11-26 18 48 14" src="https://github.com/user-attachments/assets/ae42d273-d4b1-4415-aa5d-e0b11cf2908a" />
 
-![スクリーンショット 2025-11-26 18.48.19.png](attachment:58640c0d-2c58-43fa-871f-b29f1e6e3a19:スクリーンショット_2025-11-26_18.48.19.png)
+<img width="523" height="215" alt="スクリーンショット 2025-11-26 18 48 30" src="https://github.com/user-attachments/assets/6df5a45f-aea2-4340-8bce-ace533b0553d" />
+<img width="631" height="208" alt="スクリーンショット 2025-11-26 18 48 25" src="https://github.com/user-attachments/assets/8c005c5c-e445-4ff2-996a-5e89ecaaa43a" />
+<img width="440" height="152" alt="スクリーンショット 2025-11-26 18 48 19" src="https://github.com/user-attachments/assets/262752df-6a12-4149-ac51-9f78df80c4c4" />
 
-![スクリーンショット 2025-11-26 18.48.25.png](attachment:746a43fe-1011-412c-8130-651ed81fa868:スクリーンショット_2025-11-26_18.48.25.png)
-
-![スクリーンショット 2025-11-26 18.48.30.png](attachment:3c297ae7-09f5-4840-a2f6-398458f00c39:スクリーンショット_2025-11-26_18.48.30.png)
 
 ## 参考リンク
 
